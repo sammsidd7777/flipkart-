@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon"  type="x-icon" href="data:image/jpeg;base64,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">
+    <title>Online Shopping - site</title>
+    <link rel="stylesheet" href="flipkart.css">
+    
+</head>
+<body>
+    <div class="header">
+
+        <div class="logo"><img src="flikar new logo.svg" alt=""></div>
+
+        <div class="fullsearch" style="display: flex;">
+
+        <div class="searchicon"><i class="fa-solid fa-magnifying-glass"></i></div>
+
+        <input type="search" placeholder=" Search for Product, Brand and More"></div>
+
+        <div class="login"><img src="user.svg" alt=""> Login <img src="arow.svg" alt=""></div>
+
+        <div class="cart"><img src="cart.svg" alt=""></i>Cart</div>
+
+        <div class="shop"><img src="shop.svg" alt=""></i>Become a Seller</div>
+
+        <div class="dot"><img src="dot.svg" alt=""></div>
+
+        <div class="" style="width: 2vw;"></div>
+
+    </div>
+    <div class="blank"></div>
+
+    <div class="menu">
+
+        <div class="box">
+
+            <div class="one">
+                <img src="https://rukminim2.flixcart.com/flap/80/80/image/29327f40e9c4d26b.png?q=100" alt="">
+                <p>Grocery <img src="arow.svg" alt=""></p>
+            </div>
+
+            <div class="one">
+                <img src="https://rukminim2.flixcart.com/flap/80/80/image/dff3f7adcf3a90c6.png?q=100" alt="">
+                <p>Beautiful ,toy <img src="arow.svg" alt=""></p>
+            </div>
+            <div class="one">
+                <img src="https://rukminim2.flixcart.com/flap/80/80/image/22fddf3c7da4c4f4.png?q=100" alt="">
+                <p>Mobile <img src="arow.svg" alt=""></p>
+            </div>
+            <div class="one">
+                <img src="https://rukminim2.flixcart.com/fk-p-flap/80/80/image/0d75b34f7d8fbcb3.png?q=100" alt="">
+                <p>Fashion <img src="arow.svg" alt=""></p>
+            </div>
+            <div class="one">
+                <img src="https://rukminim2.flixcart.com/flap/80/80/image/69c6589653afdb9a.png?q=100" alt="">
+                <p>Electronics <img src="arow.svg" alt=""></p>
+            </div>
+            <div class="one">
+                <img src="https://rukminim2.flixcart.com/flap/80/80/image/ab7e2b022a4587dd.jpg?q=100" alt="">
+                <p>Home <img src="arow.svg" alt=""></p>
+            </div>
+            <div class="one">
+                <img src="https://rukminim2.flixcart.com/fk-p-flap/80/80/image/0139228b2f7eb413.jpg?q=100" alt="">
+                <p>Appliance  <img src="arow.svg" alt=""></p>
+            </div>
+            <div class="one">
+                <img src="https://rukminim2.flixcart.com/flap/80/80/image/71050627a56b4693.png?q=100" alt="">
+                <p>travel <img src="arow.svg" alt=""></p>
+            </div>
+
+            <div class="one">
+                <img src="https://rukminim2.flixcart.com/fk-p-flap/80/80/image/05d708653beff580.png?q=100" alt="">
+                <p>Two wheelers <img src="arow.svg" alt=""></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="slid">
+       
+       
+       
+       
+        
+
+
+
+    </div>
+
+    <div class="fourimg">
+
+        <div class="one"> <img src="https://rukminim2.flixcart.com/fk-p-flap/520/280/image/ec6cf773ae886bd7.jpg?q=20" alt=""></div>
+      <div class="one">
+        <img src="https://rukminim2.flixcart.com/fk-p-flap/520/280/image/22e305bf45e2e1a2.jpeg?q=20" alt=""></div>
+       <div class="one"> <img src="https://rukminim2.flixcart.com/fk-p-flap/520/280/image/c3146ff3077e7744.jpg?q=20" alt=""></div>
+       <div class="two"> <img src="https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/e/q/g/-original-imagtqqd4vcdzqdg.jpeg?q=70&crop=false" alt=""></div>
+
+    </div>
+
+    <div class="topdeal">
+         
+        <div class="top">Top deal</div>
+
+        <div class="box">
+                <div class="deal">
+            
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/k/z/v/6-na-6-airson-white-red-original-imagwcgpdgvcyyng.jpeg?q=70" alt="">
+        <div class="detail">
+            <p><a href="">Red trap, wildcraft</a></p>
+            <h4><a href="">Min 60% off</a></h4></div>
+        </div>
+
+        <div class="deal">
+            
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/m/l/k/10-rsl006-red-tape-white-navy-original-imagsfd5gzckcycr.jpeg?q=70" alt="">
+        
+            <div class="detail">
+            <p><a href="">fastrack, ray-ban,idee</a></p>
+            <h4><a href="">Min 80% off</a></h4></div>
+        </div>
+
+        <div class="deal">
+            
+            <img src="https://rukminim2.flixcart.com/image/300/300/xif0q/kurta/n/v/9/l-grey-1002-maroon-s-k-casual-original-imagzyzf4bpzz6hc.jpeg?q=90" alt="">
+        
+            <div class="detail">
+            <p><a href="">kurta set more</a></p>
+            <h4><a href="">under 100$ off</a></h4></div>
+        </div>
+
+        <div class="deal">
+            
+            <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/cargo/q/e/j/32-emtrcg2bc011sagegreen-spykar-original-imagsrn5g9gkanzh.jpeg?q=70&crop=false" alt="">
+        
+            <div class="detail">
+            <p><a href="">flying machine spyker,</a></p>
+            <h4><a href="">Min 65% off</a></h4></div>
+        </div>
+
+        <div class="deal">
+            
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/jean/h/f/0/32-pm207433q05-pepe-jeans-original-imagt2umh7jqcxzv.jpeg?q=70" alt="">
+        
+            <div class="detail">
+            <p><a href="">pepa jeans raymond,le.</a></p>
+            <h4><a href="">30% - 60% off</a></h4></div>
+        </div>
+
+        <div class="deal">
+            
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/earring/9/i/i/fl-ketrina-lavender-brado-jewellery-original-imagt5fm2tcq6gzc.jpeg?q=70" alt="">
+        
+             <div class="detail">
+            <p><a href="">earring, jewellery sets...</a></p>
+            <h4><a href="">flat 60% off</a></h4></div>
+        </div>
+
+        <div class="deal">
+            
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/jean/3/2/o/28-a7088-0015-levis-original-imagshzcpxvqcb23.jpeg?q=70" alt="">
+         <div class="detail">
+            <p><a href="">levi's, ONLY dressber</a></p>
+            <h4><a href=""> 60-80% off</a></h4></div>
+        </div>
+        
+
+
+
+        </div>
+
+    </div>
+
+<div class="onepic">
+<img src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/15466d2e45b85b74.jpg?q=20" alt="">
+
+<img src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/6cddec15043dd52d.jpg?q=20" alt="">
+
+<img src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/52e52e235d44741f.jpg?q=20" alt="">
+
+<img src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/9926b000d9e06f79.jpg?q=20" alt="">
+<img src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/3dbceec64ee01bdc.jpg?q=20" alt="">
+<img src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/6f23fc1a646a9c64.jpg?q=20" alt="">
+<img src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/30527c6a71197cda.jpg?q=20" alt="">
+<img src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/fe42cb569b6a602a.jpg?q=20" alt="">
+<img src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/8c847eea35140ed6.jpg?q=20" alt="">
+<img src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/ae3a176640c25f34.jpeg?q=20" alt="">
+<img src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/b542d3cf44569508.jpg?q=20" alt="">
+<img src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/7831c7b7305b24a1.jpg?q=20" alt="">
+
+
+
+
+
+
+</div>
+
+
+<div class="topdeal2" style="">
+         
+    <div class="top">Top deal</div>
+
+    <div class="box">
+        <div class="deal">
+    
+    <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/k/z/v/6-na-6-airson-white-red-original-imagwcgpdgvcyyng.jpeg?q=70" alt="">
+<div class="detail">
+    <p><a href="">Red trap, wildcraft</a></p>
+    <h4><a href="">Min 60% off</a></h4></div>
+</div>
+
+<div class="deal">
+    
+    <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/m/l/k/10-rsl006-red-tape-white-navy-original-imagsfd5gzckcycr.jpeg?q=70" alt="">
+
+    <div class="detail">
+    <p><a href="">fastrack, ray-ban,idee</a></p>
+    <h4><a href="">Min 80% off</a></h4></div>
+</div>
+
+<div class="deal">
+    
+    <img src="https://rukminim2.flixcart.com/image/300/300/xif0q/kurta/n/v/9/l-grey-1002-maroon-s-k-casual-original-imagzyzf4bpzz6hc.jpeg?q=90" alt="">
+
+    <div class="detail">
+    <p><a href="">kurta set more</a></p>
+    <h4><a href="">under 100$ off</a></h4></div>
+</div>
+
+<div class="deal">
+    
+    <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/cargo/q/e/j/32-emtrcg2bc011sagegreen-spykar-original-imagsrn5g9gkanzh.jpeg?q=70&crop=false" alt="">
+
+    <div class="detail">
+    <p><a href="">flying machine spyker,</a></p>
+    <h4><a href="">Min 65% off</a></h4></div>
+</div>
+
+<div class="deal">
+    
+    <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/jean/h/f/0/32-pm207433q05-pepe-jeans-original-imagt2umh7jqcxzv.jpeg?q=70" alt="">
+
+    <div class="detail">
+    <p><a href="">pepa jeans raymond,le.</a></p>
+    <h4><a href="">30% - 60% off</a></h4></div>
+</div>
+
+<div class="deal">
+    
+    <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/earring/9/i/i/fl-ketrina-lavender-brado-jewellery-original-imagt5fm2tcq6gzc.jpeg?q=70" alt="">
+
+     <div class="detail">
+    <p><a href="">earring, jewellery sets...</a></p>
+    <h4><a href="">flat 60% off</a></h4></div>
+</div>
+
+<div class="deal">
+    
+    <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/jean/3/2/o/28-a7088-0015-levis-original-imagshzcpxvqcb23.jpeg?q=70" alt="">
+ <div class="detail">
+    <p><a href="">levi's, ONLY dressber</a></p>
+    <h4><a href=""> 60-80% off</a></h4></div>
+</div>
+
+
+
+
+</div>
+<div class="best">
+         
+    <div class="top">Top deal</div>
+
+    <div class="box">
+        <div class="deal">
+    
+    <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/k/z/v/6-na-6-airson-white-red-original-imagwcgpdgvcyyng.jpeg?q=70" alt="">
+<div class="detail">
+    <p><a href="">Red trap, wildcraft</a></p>
+    <h4><a href="">Min 60% off</a></h4></div>
+</div>
+
+<div class="deal">
+    
+    <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/m/l/k/10-rsl006-red-tape-white-navy-original-imagsfd5gzckcycr.jpeg?q=70" alt="">
+
+    <div class="detail">
+    <p><a href="">fastrack, ray-ban,idee</a></p>
+    <h4><a href="">Min 80% off</a></h4></div>
+</div>
+
+<div class="deal">
+    
+    <img src="https://rukminim2.flixcart.com/image/300/300/xif0q/kurta/n/v/9/l-grey-1002-maroon-s-k-casual-original-imagzyzf4bpzz6hc.jpeg?q=90" alt="">
+
+    <div class="detail">
+    <p><a href="">kurta set more</a></p>
+    <h4><a href="">under 100$ off</a></h4></div>
+</div>
+
+<div class="deal">
+    
+    <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/cargo/q/e/j/32-emtrcg2bc011sagegreen-spykar-original-imagsrn5g9gkanzh.jpeg?q=70&crop=false" alt="">
+
+    <div class="detail">
+    <p><a href="">flying machine spyker,</a></p>
+    <h4><a href="">Min 65% off</a></h4></div>
+</div>
+
+<div class="deal">
+    
+    <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/jean/h/f/0/32-pm207433q05-pepe-jeans-original-imagt2umh7jqcxzv.jpeg?q=70" alt="">
+
+    <div class="detail">
+    <p><a href="">pepa jeans raymond,le.</a></p>
+    <h4><a href="">30% - 60% off</a></h4></div>
+</div>
+
+<div class="deal">
+    
+    <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/earring/9/i/i/fl-ketrina-lavender-brado-jewellery-original-imagt5fm2tcq6gzc.jpeg?q=70" alt="">
+
+     <div class="detail">
+    <p><a href="">earring, jewellery sets...</a></p>
+    <h4><a href="">flat 60% off</a></h4></div>
+</div>
+
+<div class="deal">
+    
+    <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/jean/3/2/o/28-a7088-0015-levis-original-imagshzcpxvqcb23.jpeg?q=70" alt="">
+ <div class="detail">
+    <p><a href="">levi's, ONLY dressber</a></p>
+    <h4><a href=""> 60-80% off</a></h4></div>
+</div>
+
+
+
+
+</div>
+
+<div class="onepic2">
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/520/280/image/93af3a4a225cef48.jpg?q=20" alt="">
+    
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/520/280/image/841799092913eb93.jpg?q=20" alt="">
+    
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/520/280/image/92ef3a2638d26c32.jpg?q=20" alt="">
+    
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/520/280/image/26562b988f2afaf2.jpg?q=20" alt="">
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/520/280/image/965347ee46f0f378.jpg?q=20" alt="">
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/520/280/image/b40b35d91f1aecf8.jpeg?q=20" alt="">
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/520/280/image/e07bbae5b4dee3d3.jpg?q=20" alt="">
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/520/280/image/eb8deced95a84f24.jpg?q=20" alt="">
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/520/280/image/91fd936e8d256cc4.jpg?q=20" alt="">
+
+    </div>
+
+    <div class="fourbox">
+
+        <img src="debit card emi.png" alt="">
+        <img src="no cost emi.png" alt="">
+        <img src="gift card.png" alt="">
+        <img src="moto insurence.png" alt="">
+
+
+    </div>
+    
+<div class="ad">
+    <div class="one">
+
+        <div class="h3">Top section</div>
+
+        <div class="bigbox">
+            <div class="box">
+        
+                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/m/l/k/10-rsl006-red-tape-white-navy-original-imagsfd5gzckcycr.jpeg?q=70" alt="">
+            
+                <p><a href="">fastrack, ray-ban,idee</a></p>
+                <h4><a href="">Min 80% off</a></h4>
+            </div>
+
+            <div class="box">
+        
+                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/m/l/k/10-rsl006-red-tape-white-navy-original-imagsfd5gzckcycr.jpeg?q=70" alt="">
+            
+                <p><a href="">fastrack, ray-ban,idee</a></p>
+                <h4><a href="">Min 80% off</a></h4>
+            </div>
+
+            <div class="box">
+        
+                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/m/l/k/10-rsl006-red-tape-white-navy-original-imagsfd5gzckcycr.jpeg?q=70" alt="">
+            
+                <p><a href="">fastrack, ray-ban,idee</a></p>
+                <h4><a href="">Min 80% off</a></h4>
+            </div>
+
+            <div class="box">
+        
+                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/m/l/k/10-rsl006-red-tape-white-navy-original-imagsfd5gzckcycr.jpeg?q=70" alt="">
+            
+                <p><a href="">fastrack, ray-ban,idee</a></p>
+                <h4><a href="">Min 80% off</a></h4>
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <div class="two"><img src="https://couponswala.com/blog/wp-content/uploads/2020/03/FLIPKART-holi-sale-min.png.webp" alt=""></div>
+
+</div>
+
+<div class="onepic2">
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/520/280/image/93af3a4a225cef48.jpg?q=20" alt="">
+    
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/520/280/image/841799092913eb93.jpg?q=20" alt="">
+    
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/520/280/image/92ef3a2638d26c32.jpg?q=20" alt="">
+    
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/520/280/image/26562b988f2afaf2.jpg?q=20" alt="">
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/520/280/image/965347ee46f0f378.jpg?q=20" alt="">
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/520/280/image/b40b35d91f1aecf8.jpeg?q=20" alt="">
+    
+
+    </div>
+
+
+
+
+    <div class="footer">
+        <div class="box1">
+            <div class="one">
+               <h1> About</h1>
+               <a href="">contact</a>
+                <a href="">about us</a>
+                <a href="">careers</a>
+                <a href="">flipkart stories</a>
+                <a href="">press</a>
+                <a href="">corporate information</a></nav>
+            </div>
+
+           
+                <div class="one">
+                    <h1>    GROUP COMPANIES</h1>
+                    <a href="">myntra</a>
+                    <a href="">flipkart wholesale</a>
+                    <a href="">cleatrip</a>
+                   
+                    <a href="">shopsy</a>
+                  
+                </div>
+
+
+              
+                    <div class="one">
+                        <h1>  help</h1>
+                        <a href="">payment</a>
+                        <a href="">shpping</a>
+                        <a href="">cancellation & retuns</a>
+                        <a href=""> faq</a>
+                        <a href="">report infringment</a>
+                    </div>     
+
+
+                   
+                        <div class="one">
+                            <h1>  consumer</h1>
+                            <a href="">cancellation & retune</a>
+                            <a href="">terms of use</a>
+                            <a href="">security</a>
+                            <a href="">privacy </a>
+                            <a href="">site map</a>
+                            <a href="">grivance redressal</a>
+                            <a href="">epr compliance</a>
+                        </div>
+
+
+                        
+                            <div class="one">
+                                <h1>   mail us</h1>
+                                <a href="">flipkart internet privet limeted</a>
+                                <a href="">building alyssa, begonia</a>
+                                <a href="">clove embassy tech village,</a>
+                                <a href="">outer ring road, devarabeesanahali village </a>
+                                <a href="">bengaluru, 560103 </a>
+                                <a href="">karnatak, india</a>
+                            </div>
+                            
+                            
+                          
+                                <div class="one">
+                                    <h1>    registered office adress:</h1>
+                                   <a href="">flipkart internet privet limeted</a>
+                                   <a href="">building alyssa, begonia</a>
+                                   <a href="">clove embassy tech village,</a>
+                                   <a href="">outer ring road, devarabeesanahali village </a>
+                                   <a href="">bengaluru, 560103 </a>
+                                   <a href="">karnatak, india</a>
+                                   <a href="">cin: U51109KA2012PTC066107</a>
+                                   <a href="">telephone: 044-45614700</a>
+                                </div>             
+
+
+
+
+
+
+
+
+
+
+        </div>
+       
+
+
+    </div>
+<div class="end">
+
+    <div class="one"><i class="fa-solid fa-store"></i>bussimess seller</div>
+
+<div class="one"><i class="fa-solid fa-ranking-star"></i>Advertise</div>
+
+<div class="one"><i class="fa-solid fa-gift"></i>gift cards</div>
+<div class="one"><i class="fa-solid fa-handshake-angle"></i>help center</div>
+<div class="one"><i class="fa-regular fa-copyright"></i>2007-2024 flipkart</div>
+<div class="one"><img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-c454fb.svg" alt=""></div>
+
+
+</div>
+
+
+
+
+</body>
+</html>
